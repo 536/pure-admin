@@ -4,12 +4,12 @@ import {
   unref,
   watch,
   reactive,
-  computed,
+  // computed,
   nextTick,
   onBeforeMount
 } from "vue";
 import {
-  useDark,
+  // useDark,
   debounce,
   useGlobal,
   storageLocal,
@@ -30,11 +30,11 @@ import { useDataThemeChange } from "@/layout/hooks/useDataThemeChange";
 
 import dayIcon from "@/assets/svg/day.svg?component";
 import darkIcon from "@/assets/svg/dark.svg?component";
-import Check from "@iconify-icons/ep/check";
+// import Check from "@iconify-icons/ep/check";
 import Logout from "@iconify-icons/ri/logout-circle-r-line";
 
 const router = useRouter();
-const { isDark } = useDark();
+// const { isDark } = useDark();
 const { device, tooltipEffect } = useNav();
 const { $storage } = useGlobal<GlobalPropertiesApi>();
 
@@ -45,10 +45,10 @@ const horizontalRef = ref();
 const {
   dataTheme,
   layoutTheme,
-  themeColors,
+  // themeColors,
   dataThemeChange,
-  setEpThemeColor,
-  setLayoutThemeColor
+  setEpThemeColor
+  // setLayoutThemeColor
 } = useDataThemeChange();
 
 /* body添加layout属性，作用于src/style/sidebar.scss */
@@ -75,18 +75,18 @@ const settings = reactive({
   multiTagsCache: $storage.configure.multiTagsCache
 });
 
-const getThemeColorStyle = computed(() => {
-  return color => {
-    return { background: color };
-  };
-});
+// const getThemeColorStyle = computed(() => {
+//   return color => {
+//     return { background: color };
+//   };
+// });
 
-/** 当网页为暗黑模式时不显示亮白色切换选项 */
-const showThemeColors = computed(() => {
-  return themeColor => {
-    return themeColor === "light" && isDark.value ? false : true;
-  };
-});
+// /** 当网页为暗黑模式时不显示亮白色切换选项 */
+// const showThemeColors = computed(() => {
+//   return themeColor => {
+//     return themeColor === "light" && isDark.value ? false : true;
+//   };
+// });
 
 function storageConfigureChange<T>(key: string, val: T): void {
   const storageConfigure = $storage.configure;
@@ -164,24 +164,24 @@ function setFalse(Doms): any {
   });
 }
 
-/** 主题色 激活选择项 */
-const getThemeColor = computed(() => {
-  return current => {
-    if (
-      current === layoutTheme.value.theme &&
-      layoutTheme.value.theme !== "light"
-    ) {
-      return "#fff";
-    } else if (
-      current === layoutTheme.value.theme &&
-      layoutTheme.value.theme === "light"
-    ) {
-      return "#1d2b45";
-    } else {
-      return "transparent";
-    }
-  };
-});
+// /** 主题色 激活选择项 */
+// const getThemeColor = computed(() => {
+//   return current => {
+//     if (
+//       current === layoutTheme.value.theme &&
+//       layoutTheme.value.theme !== "light"
+//     ) {
+//       return "#fff";
+//     } else if (
+//       current === layoutTheme.value.theme &&
+//       layoutTheme.value.theme === "light"
+//     ) {
+//       return "#1d2b45";
+//     } else {
+//       return "transparent";
+//     }
+//   };
+// });
 
 /** 设置导航模式 */
 function setLayoutModel(layout: string) {
@@ -298,7 +298,7 @@ onBeforeMount(() => {
       </el-tooltip>
     </ul>
 
-    <el-divider>主题色</el-divider>
+    <!-- <el-divider>主题色</el-divider>
     <ul class="theme-color">
       <li
         v-for="(item, index) in themeColors"
@@ -315,7 +315,7 @@ onBeforeMount(() => {
           <IconifyIconOffline :icon="Check" />
         </el-icon>
       </li>
-    </ul>
+    </ul> -->
 
     <el-divider>界面显示</el-divider>
     <ul class="setting">
@@ -455,7 +455,7 @@ onBeforeMount(() => {
         &:nth-child(1) {
           width: 30%;
           height: 100%;
-          background: #1b2a47;
+          background: #00be7a;
         }
 
         &:nth-child(2) {
@@ -475,7 +475,7 @@ onBeforeMount(() => {
         &:nth-child(1) {
           width: 100%;
           height: 30%;
-          background: #1b2a47;
+          background: #00be7a;
           box-shadow: 0 0 1px #888;
         }
       }
@@ -486,7 +486,7 @@ onBeforeMount(() => {
         &:nth-child(1) {
           width: 100%;
           height: 30%;
-          background: #1b2a47;
+          background: #00be7a;
           box-shadow: 0 0 1px #888;
         }
 

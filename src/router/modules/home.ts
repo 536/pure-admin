@@ -5,7 +5,7 @@ export default {
   path: "/",
   name: "Home",
   component: Layout,
-  redirect: "/welcome",
+  redirect: "/test-task",
   meta: {
     icon: "homeFilled",
     title: "首页",

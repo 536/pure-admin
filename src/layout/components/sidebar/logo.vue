@@ -53,6 +53,7 @@ const topPath = getTopMenu().path;
     img {
       display: inline-block;
       height: 32px;
+      fill: var(--el-text-color-regular);
     }
 
     .sidebar-title {
@@ -63,7 +64,7 @@ const topPath = getTopMenu().path;
       font-size: 18px;
       font-weight: 600;
       line-height: 32px;
-      color: $subMenuActiveText;
+      color: var(--el-text-color-regular);
       text-overflow: ellipsis;
       white-space: nowrap;
     }

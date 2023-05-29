@@ -1,6 +1,6 @@
 {
   "Version": "4.1.0",
-  "Title": "PureAdmin",
+  "Title": "SwTest",
   "FixedHeader": true,
   "HiddenSideBar": false,
   "MultiTagsCache": false,
@@ -12,7 +12,7 @@
   "Weak": false,
   "HideTabs": false,
   "SidebarStatus": true,
-  "EpThemeColor": "#409EFF",
+  "EpThemeColor": "#00BE7A",
   "ShowLogo": true,
   "ShowModel": "smart",
   "MenuArrowIconNoTransition": true,

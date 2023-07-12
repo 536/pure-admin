@@ -38,6 +38,12 @@ const topPath = getTopMenu().path;
 </template>
 
 <style lang="scss" scoped>
+.dark .sidebar-logo-link {
+  img {
+    filter: invert(1);
+  }
+}
+
 .sidebar-logo-container {
   position: relative;
   width: 100%;
